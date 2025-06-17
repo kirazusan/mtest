@@ -1,0 +1,39 @@
+
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using System;
+
+namespace BackendProject.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ConfigureController : ControllerBase
+    {
+        private readonly ConfigureEndpoint _configureEndpoint;
+
+        public ConfigureController(ConfigureEndpoint configureEndpoint)
+        {
+            _configureEndpoint = configureEndpoint;
+        }
+
+        [HttpPost]
+        public IActionResult Configure()
+        {
+            try
+            {
+                var response = _configureEndpoint.Configure();
+                if (response == null)
+                {
+                    return NotFound();
+                }
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+    }
+}
+```
