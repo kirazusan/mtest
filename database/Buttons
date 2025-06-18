@@ -1,0 +1,139 @@
+
+
+package database
+
+import (
+	"database/sql"
+	"errors"
+	"fmt"
+	"log"
+)
+
+type Button struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+	Value string `json:"value"`
+}
+
+type Buttons struct {
+	db *sql.DB
+}
+
+func NewButtons(db *sql.DB) *Buttons {
+	return &Buttons{db: db}
+}
+
+func (b *Buttons) CreateTable() error {
+	if b.db == nil {
+		return errors.New("database connection is not established")
+	}
+	_, err := b.db.Exec(`
+		CREATE TABLE IF NOT EXISTS Buttons (
+			ID INTEGER PRIMARY KEY AUTOINCREMENT,
+			Name TEXT NOT NULL,
+			Value TEXT NOT NULL
+		);
+	`)
+	if err != nil {
+		log.Printf("error creating table: %v", err)
+	}
+	return err
+}
+
+func (b *Buttons) Insert(button *Button) error {
+	if b.db == nil {
+		return errors.New("database connection is not established")
+	}
+	stmt, err := b.db.Prepare("INSERT INTO Buttons (Name, Value) VALUES (?, ?)")
+	if err != nil {
+		log.Printf("error preparing insert statement: %v", err)
+		return err
+	}
+	defer stmt.Close()
+	_, err = stmt.Exec(button.Name, button.Value)
+	if err != nil {
+		log.Printf("error inserting button: %v", err)
+	}
+	return err
+}
+
+func (b *Buttons) Get(id int) (*Button, error) {
+	if b.db == nil {
+		return nil, errors.New("database connection is not established")
+	}
+	button := &Button{}
+	stmt, err := b.db.Prepare("SELECT * FROM Buttons WHERE ID = ?")
+	if err != nil {
+		log.Printf("error preparing select statement: %v", err)
+		return nil, err
+	}
+	defer stmt.Close()
+	err = stmt.QueryRow(id).Scan(&button.ID, &button.Name, &button.Value)
+	if err != nil {
+		log.Printf("error getting button: %v", err)
+	}
+	return button, err
+}
+
+func (b *Buttons) GetAll() ([]*Button, error) {
+	if b.db == nil {
+		return nil, errors.New("database connection is not established")
+	}
+	buttons := []*Button{}
+	stmt, err := b.db.Prepare("SELECT * FROM Buttons")
+	if err != nil {
+		log.Printf("error preparing select statement: %v", err)
+		return nil, err
+	}
+	defer stmt.Close()
+	rows, err := stmt.Query()
+	if err != nil {
+		log.Printf("error getting all buttons: %v", err)
+		return nil, err
+	}
+	defer rows.Close()
+	for rows.Next() {
+		button := &Button{}
+		err = rows.Scan(&button.ID, &button.Name, &button.Value)
+		if err != nil {
+			log.Printf("error scanning button: %v", err)
+			return nil, err
+		}
+		buttons = append(buttons, button)
+	}
+	return buttons, err
+}
+
+func (b *Buttons) Update(button *Button) error {
+	if b.db == nil {
+		return errors.New("database connection is not established")
+	}
+	stmt, err := b.db.Prepare("UPDATE Buttons SET Name = ?, Value = ? WHERE ID = ?")
+	if err != nil {
+		log.Printf("error preparing update statement: %v", err)
+		return err
+	}
+	defer stmt.Close()
+	_, err = stmt.Exec(button.Name, button.Value, button.ID)
+	if err != nil {
+		log.Printf("error updating button: %v", err)
+	}
+	return err
+}
+
+func (b *Buttons) Delete(id int) error {
+	if b.db == nil {
+		return errors.New("database connection is not established")
+	}
+	stmt, err := b.db.Prepare("DELETE FROM Buttons WHERE ID = ?")
+	if err != nil {
+		log.Printf("error preparing delete statement: %v", err)
+		return err
+	}
+	defer stmt.Close()
+	_, err = stmt.Exec(id)
+	if err != nil {
+		log.Printf("error deleting button: %v", err)
+	}
+	return err
+}

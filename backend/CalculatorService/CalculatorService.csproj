@@ -1,0 +1,55 @@
+
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.10" />
+  </ItemGroup>
+</Project>
+
+using System;
+using Microsoft.Extensions.Logging;
+
+namespace CalculatorService
+{
+    public class Calculator
+    {
+        private readonly ILogger _logger;
+
+        public Calculator(ILogger<Calculator> logger)
+        {
+            _logger = logger;
+        }
+
+        public int Add(int a, int b)
+        {
+            _logger.LogInformation($"Adding {a} and {b}");
+            return a + b;
+        }
+
+        public int Subtract(int a, int b)
+        {
+            _logger.LogInformation($"Subtracting {b} from {a}");
+            return a - b;
+        }
+
+        public int Multiply(int a, int b)
+        {
+            _logger.LogInformation($"Multiplying {a} and {b}");
+            return a * b;
+        }
+
+        public int Divide(int a, int b)
+        {
+            if (b == 0)
+            {
+                _logger.LogError("Cannot divide by zero");
+                throw new DivideByZeroException();
+            }
+            _logger.LogInformation($"Dividing {a} by {b}");
+            return a / b;
+        }
+    }
+}

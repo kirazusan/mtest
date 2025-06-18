@@ -1,0 +1,24 @@
+
+
+```sql
+CREATE PROCEDURE usp_GetButtonValue
+    @ButtonId INT
+AS
+BEGIN
+    IF @ButtonId IS NULL
+    BEGIN
+        RAISERROR('ButtonId cannot be null', 16, 1)
+        RETURN
+    END
+
+    IF NOT EXISTS (SELECT 1 FROM Buttons WHERE Id = @ButtonId)
+    BEGIN
+        RAISERROR('ButtonId does not exist in the Buttons table', 16, 1)
+        RETURN
+    END
+
+    SELECT Value 
+    FROM Buttons 
+    WHERE Id = @ButtonId
+END
+```

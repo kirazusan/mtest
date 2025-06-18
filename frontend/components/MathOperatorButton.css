@@ -1,0 +1,171 @@
+
+
+.MathOperatorButton {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    margin: 5px;
+    padding: 10px;
+    width: 40px;
+}
+
+.MathOperatorButton:hover {
+    background-color: #e0e0e0;
+}
+
+.MathOperatorButton:active {
+    background-color: #d0d0d0;
+}
+
+.MathOperatorButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.MathOperatorButton--primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.MathOperatorButton--primary:hover {
+    background-color: #0056b3;
+}
+
+.MathOperatorButton--primary:active {
+    background-color: #004d99;
+}
+
+.MathOperatorButton--primary:focus {
+    outline: none;
+    box-shadow: 0 0 5px #66b3ff;
+}
+
+.MathOperatorButton--secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
+.MathOperatorButton--secondary:hover {
+    background-color: #5a6268;
+}
+
+.MathOperatorButton--secondary:active {
+    background-color: #545b62;
+}
+
+.MathOperatorButton--secondary:focus {
+    outline: none;
+    box-shadow: 0 0 5px #8b949e;
+}
+
+.MathOperatorButton--success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.MathOperatorButton--success:hover {
+    background-color: #218838;
+}
+
+.MathOperatorButton--success:active {
+    background-color: #1e7e34;
+}
+
+.MathOperatorButton--success:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3af158;
+}
+
+.MathOperatorButton--danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.MathOperatorButton--danger:hover {
+    background-color: #c82333;
+}
+
+.MathOperatorButton--danger:active {
+    background-color: #b02a37;
+}
+
+.MathOperatorButton--danger:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff6a6a;
+}
+
+.MathOperatorButton--warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.MathOperatorButton--warning:hover {
+    background-color: #ffa07a;
+}
+
+.MathOperatorButton--warning:active {
+    background-color: #ff9900;
+}
+
+.MathOperatorButton--warning:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ffd480;
+}
+
+.MathOperatorButton--info {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.MathOperatorButton--info:hover {
+    background-color: #138496;
+}
+
+.MathOperatorButton--info:active {
+    background-color: #117a8b;
+}
+
+.MathOperatorButton--info:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3bc9db;
+}
+
+.MathOperatorButton--light {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.MathOperatorButton--light:hover {
+    background-color: #e2e6ea;
+}
+
+.MathOperatorButton--light:active {
+    background-color: #dae0e5;
+}
+
+.MathOperatorButton--light:focus {
+    outline: none;
+    box-shadow: 0 0 5px #d9d9d9;
+}
+
+.MathOperatorButton--dark {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.MathOperatorButton--dark:hover {
+    background-color: #2f343a;
+}
+
+.MathOperatorButton--dark:active {
+    background-color: #2a2d33;
+}
+
+.MathOperatorButton--dark:focus {
+    outline: none;
+    box-shadow: 0 0 5px #4f545c;
+}

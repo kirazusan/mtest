@@ -1,0 +1,9 @@
+
+
+CREATE TABLE CalculatorHistory (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    input1 DECIMAL(10, 2) NOT NULL,
+    input2 DECIMAL(10, 2) NOT NULL,
+    result DECIMAL(10, 2) NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

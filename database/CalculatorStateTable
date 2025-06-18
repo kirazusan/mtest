@@ -1,0 +1,59 @@
+
+
+package database
+
+import (
+	"database/sql"
+	"errors"
+	"fmt"
+	"log"
+)
+
+type CalculatorStateTable struct {
+	db *sql.DB
+}
+
+func NewCalculatorStateTable(db *sql.DB) *CalculatorStateTable {
+	return &CalculatorStateTable{db: db}
+}
+
+func (c *CalculatorStateTable) Update(id int, currentNumber sql.NullFloat64, currentState string, mathOperator string) error {
+	if !currentNumber.Valid {
+		return errors.New("currentNumber is not valid")
+	}
+
+	var count int
+	err := c.db.QueryRow("SELECT COUNT(*) FROM CalculatorStateTable WHERE Id = $1", id).Scan(&count)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	if count == 0 {
+		return errors.New("id does not exist")
+	}
+
+	_, err = c.db.Exec("UPDATE CalculatorStateTable SET CurrentNumber = $1, CurrentState = $2, MathOperator = $3 WHERE Id = $4",
+		currentNumber, currentState, mathOperator, id)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	return nil
+}
+
+func (c *CalculatorStateTable) Insert(currentNumber sql.NullFloat64, currentState string, mathOperator string) error {
+	if !currentNumber.Valid {
+		return errors.New("currentNumber is not valid")
+	}
+
+	_, err := c.db.Exec("INSERT INTO CalculatorStateTable (CurrentNumber, CurrentState, MathOperator) VALUES ($1, $2, $2, $3)",
+		currentNumber, currentState, mathOperator)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	return nil
+}
