@@ -1,1 +1,1 @@
-C# MAUI to C# + React
+C# MAUI to C# (back) + React (front)
