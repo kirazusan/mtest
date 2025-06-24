@@ -1,0 +1,27 @@
+
+
+.MathOperatorButton {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    margin: 5px;
+    padding: 10px;
+    width: 40px;
+}
+
+.MathOperatorButton:hover {
+    background-color: #e0e0e0;
+}
+
+.MathOperatorButton:active {
+    background-color: #d0d0d0;
+}
+
+.MathOperatorButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ccc;
+}

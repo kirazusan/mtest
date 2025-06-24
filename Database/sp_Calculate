@@ -1,0 +1,57 @@
+
+
+```sql
+CREATE PROCEDURE sp_Calculate
+    @firstNumber decimal(18, 2),
+    @secondNumber decimal(18, 2),
+    @mathOperator nvarchar(1)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @result decimal(18, 2);
+    DECLARE @errorMessage nvarchar(255);
+
+    IF @firstNumber IS NULL OR @secondNumber IS NULL OR @mathOperator IS NULL
+    BEGIN
+        SET @errorMessage = 'Input parameters cannot be null.';
+        RAISERROR (@errorMessage, 16, 1);
+        RETURN;
+    END
+
+    IF @mathOperator NOT IN ('+', '-', '*', '/')
+    BEGIN
+        SET @errorMessage = 'Invalid math operator.';
+        RAISERROR (@errorMessage, 16, 1);
+        RETURN;
+    END
+
+    BEGIN TRY
+        IF @mathOperator = '+'
+            SET @result = @firstNumber + @secondNumber;
+        ELSE IF @mathOperator = '-'
+            SET @result = @firstNumber - @secondNumber;
+        ELSE IF @mathOperator = '*'
+            SET @result = @firstNumber * @secondNumber;
+        ELSE IF @mathOperator = '/'
+        BEGIN
+            IF @secondNumber = 0
+            BEGIN
+                SET @errorMessage = 'Cannot divide by zero.';
+                RAISERROR (@errorMessage, 16, 1);
+                RETURN;
+            END
+            SET @result = @firstNumber / @secondNumber;
+        END
+
+        INSERT INTO CalculationResults (Result)
+        VALUES (@result);
+
+        SELECT @result AS Result;
+    END TRY
+    BEGIN CATCH
+        SET @errorMessage = ERROR_MESSAGE();
+        RAISERROR (@errorMessage, 16, 1);
+    END CATCH
+END
+```
