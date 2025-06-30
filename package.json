@@ -1,0 +1,79 @@
+
+
+package.json
+{
+  "name": "project",
+  "version": "1.0.0",
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "axios": "0.21.1"
+  },
+  "scripts": {
+    "start": "node CalculatorService.js"
+  }
+}
+
+CalculatorService.js
+const axios = require('axios');
+
+class CalculatorService {
+  async calculate(expression) {
+    try {
+      const response = await axios.get(`https://api.mathjs.org/v4/?expr=${expression}`);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+
+module.exports = CalculatorService;
+
+Program.cs
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+
+namespace Project
+{
+  public class Program
+  {
+    public static void Main(string[] args)
+    {
+      CreateHostBuilder(args).Build().Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+      Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+          webBuilder.UseStartup<Startup>();
+        });
+  }
+}
+
+Startup.cs
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
+namespace Project
+{
+  public class Startup
+  {
+    public void ConfigureServices(IServiceCollection services)
+    {
+      services.AddControllers();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
+    {
+      app.UseRouting();
+      app.UseEndpoints(endpoints =>
+      {
+        endpoints.MapControllers();
+      });
+    }
+  }
+}

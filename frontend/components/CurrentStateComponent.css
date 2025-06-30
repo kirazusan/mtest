@@ -1,0 +1,71 @@
+
+
+.CurrentStateComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.CurrentStateComponent h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.CurrentStateComponent p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.CurrentStateComponent .state {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0099cc;
+  margin-bottom: 10px;
+}
+
+.CurrentStateComponent .description {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.CurrentStateComponent .actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.CurrentStateComponent .actions button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.CurrentStateComponent .actions button:hover {
+  background-color: #3e8e41;
+}
+
+.CurrentStateComponent .actions button:active {
+  transform: translateY(2px);
+}
+
+.CurrentStateComponent .actions button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.CurrentStateComponent .actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

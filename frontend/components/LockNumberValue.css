@@ -1,0 +1,30 @@
+
+
+.lock-number-value {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lock-number-value .label {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.lock-number-value .value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.lock-number-value .icon {
+  font-size: 24px;
+  margin-left: 10px;
+}
