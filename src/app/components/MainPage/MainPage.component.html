@@ -1,0 +1,19 @@
+package app.components.MainPage;
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-main-page',
+  template: `
+    <div>
+      <h1>Welcome to the Main Page</h1>
+      <nav>
+        <ul>
+          <li><a routerLink="/calculator">Go to Calculator</a></li>
+          <li><a routerLink="/results">Go to Results</a></li>
+        </ul>
+      </nav>
+    </div>
+  `
+})
+export class MainPageComponent {}
