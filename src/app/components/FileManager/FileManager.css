@@ -1,0 +1,68 @@
+.selected-file {
+  background-color: lightgreen;
+}
+.loading {
+  font-size: 16px;
+  color: gray;
+}
+.error {
+  color: red;
+}
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+.delete-error-message {
+  color: red;
+  font-weight: bold;
+}
+.copy-error-message {
+  color: red;
+  font-weight: bold;
+}
+.move-error-message {
+  color: red;
+  font-weight: bold;
+}
+.read-error-message {
+  color: red;
+  font-weight: bold;
+}
+.write-error-message {
+  color: red;
+  font-weight: bold;
+}
+.create-error-message {
+  color: red;
+  font-weight: bold;
+}
+.success-message {
+  color: green;
+  font-weight: bold;
+}
+.file-content {
+  white-space: pre-wrap;
+}
+.file-list {
+  list-style-type: none;
+  padding: 0;
+}
+.file-attributes {
+  margin-top: 10px;
+  font-weight: normal;
+}
+.file-metadata {
+  margin-top: 10px;
+  font-weight: normal;
+}
+.combined-path {
+  margin-top: 10px;
+  font-weight: normal;
+}
+.file-exists {
+  color: green;
+  font-weight: normal;
+}
+.directory-item {
+  margin: 5px 0;
+}

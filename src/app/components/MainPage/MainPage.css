@@ -1,0 +1,54 @@
+.app {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 2px;
+  padding: 16px;
+}
+.header {
+  font-size: 22px;
+  color: #FFFFFF;
+  text-align: end;
+  padding: 0;
+  margin-bottom: 2px;
+}
+.current-calculation {
+  display: block;
+}
+.result-display {
+  font-size: 64px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: end;
+  padding: 0;
+  margin-bottom: 2px;
+}
+.result-text {
+  display: block;
+}
+.separator {
+  background-color: #D3D3D3;
+  height: 1px;
+  width: 100%;
+}
+.button-grid {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  padding: 16px;
+  margin: 0;
+}
+.button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+}
+.config-change {
+  background-color: #f0f0f0;
+  border: 2px solid #007bff;
+}
+.project-config {
+  padding: 10px;
+  margin: 10px;
+  font-size: 14px;
+}
