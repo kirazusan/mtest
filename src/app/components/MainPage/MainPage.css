@@ -1,0 +1,54 @@
+.app {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 2px;
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.calculation-display {
+  background-color: transparent;
+  padding: 16px;
+}
+
+.current-calculation {
+  font-size: 22px;
+  color: #D3D3D3;
+  text-align: end;
+  margin-bottom: 2px;
+}
+
+.result-text {
+  font-size: 64px;
+  color: #D3D3D3;
+  text-align: end;
+  margin-bottom: 2px;
+}
+
+.separator {
+  background-color: #D3D3D3;
+  height: 1px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background-color: transparent;
+  padding: 8px;
+}
+
+.clear-button, .negative-button, .percentage-button, .number-button, .operator-button, .equals-button {
+  background-color: transparent;
+  font-size: 18px;
+  color: #D3D3D3;
+  padding: 10px;
+  border: 1px solid #D3D3D3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+h1 {
+  color: blue;
+}
