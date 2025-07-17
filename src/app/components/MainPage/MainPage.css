@@ -1,0 +1,35 @@
+.calculator {
+  padding: 20px;
+  margin: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.result {
+  color: green;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.operations-list {
+  padding: 10px;
+  margin: 20px;
+}
+
+.operation-item {
+  font-size: 16px;
+  color: black;
+}
+
+.main-page-header {
+  font-size: 28px;
+  color: #333;
+}
