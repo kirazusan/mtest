@@ -1,0 +1,58 @@
+.app {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-gap: 2px;
+  padding: 16px;
+}
+.display-area {
+  display: grid;
+  grid-template-rows: auto auto;
+  padding: 16px;
+  background-color: #FFFFFF;
+}
+.current-calculation {
+  font-size: 22px;
+  color: #FFFFFF;
+  text-align: end;
+}
+.result-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: end;
+}
+.separator {
+  background-color: #D3D3D3;
+  height: 1px;
+}
+.input-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  background-color: transparent;
+}
+.action-button, .operator-button, .number-button {
+  color: #FFFFFF;
+  background-color: transparent;
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+}
+.font-list {
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 5px;
+}
+.font-item {
+  font-weight: bold;
+  color: #333;
+}
+.operation-list {
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 5px;
+}
+.operation-item {
+  font-weight: bold;
+  color: #333;
+}
