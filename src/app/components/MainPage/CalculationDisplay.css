@@ -1,0 +1,23 @@
+.calculation-display {
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.current-calculation {
+  font-size: 22px;
+  color: #ffffff;
+  text-align: right;
+}
+
+.result-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: right;
+}
+
+.separator {
+  background-color: #d3d3d3;
+  height: 1px;
+}

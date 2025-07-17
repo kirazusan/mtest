@@ -1,0 +1,1 @@
+export interface CalculationResult { value: number; operation: string; }

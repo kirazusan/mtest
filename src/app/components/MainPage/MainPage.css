@@ -1,0 +1,24 @@
+.calculator {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 2px;
+  padding: 16px;
+}
+
+.light-theme {
+  background-color: white;
+  color: black;
+}
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+.test-pass {
+  background-color: lightgreen;
+}
+
+.test-fail {
+  background-color: lightcoral;
+}
