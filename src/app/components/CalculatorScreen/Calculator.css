@@ -1,0 +1,83 @@
+.calculator {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 2px;
+  padding: 16px;
+}
+.display-area {
+  display: grid;
+  grid-template-rows: auto auto 1px;
+  background-color: transparent;
+  padding: 16px;
+}
+.current-calculation {
+  font-size: 22px;
+  color: #FFFFFF;
+  text-align: end;
+}
+.result-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: end;
+}
+.separator {
+  background-color: #D3D3D3;
+  height: 1px;
+}
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: transparent;
+  padding: 16px;
+  gap: 2px;
+}
+.clear-button, .negative-button, .percentage-button, .number-button, .operator-button, .equals-button {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  padding: 16px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.clear-button:hover, .negative-button:hover, .percentage-button:hover, .number-button:hover, .operator-button:hover, .equals-button:hover {
+  background-color: #F0F0F0;
+}
+.display {
+  font-size: 2em;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.button {
+  padding: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #d0d0d0;
+}
+.config-changes {
+  font-size: 14px;
+  color: #333333;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+.lifecycle-events {
+  font-size: 14px;
+  color: #333333;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+.activity-lifecycle {
+  font-size: 14px;
+  color: #333333;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
