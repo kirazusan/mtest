@@ -1,0 +1,54 @@
+.app {
+  display: grid;
+  padding: 16px;
+  gap: 2px;
+}
+
+.calculation-display {
+  background-color: transparent;
+  padding: 16px;
+  text-align: end;
+  margin-bottom: 2px;
+}
+
+.current-calculation {
+  font-size: 22px;
+  color: #FFFFFF;
+  text-align: end;
+  white-space: nowrap;
+}
+
+.result-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: end;
+  white-space: nowrap;
+}
+
+.separator {
+  margin-bottom: 2px;
+}
+
+.box-view {
+  background-color: #D3D3D3;
+  height: 1px;
+  width: 100%;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 16px;
+  gap: 2px;
+}
+
+.clear-button, .negative-button, .percentage-button, .operation-button, .number-button, .equals-button {
+  margin-bottom: 2px;
+}
+
+.main-activity {
+  background-color: #F0F8FF;
+  padding: 20px;
+  font-size: 24px;
+}
